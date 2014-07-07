@@ -1,0 +1,9 @@
+exclude: [ "README.md", "Gemfile", "Gemfile.lock", ".idea", "bower_components", "node_modules" ]
+
+name: "Infinates"
+description: "A blogging group"
+
+url: "http://infinates.com"
+
+markdown: rdiscount
+permalink: pretty
