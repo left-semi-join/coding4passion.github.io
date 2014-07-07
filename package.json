@@ -1,0 +1,25 @@
+{
+  "name": "infinates",
+  "version": "0.0.0",
+  "description": "A blog",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Infinates/infinates.github.io.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "TheCodeDestroyer",
+  "license": " ",
+  "bugs": {
+    "url": "https://github.com/Infinates/infinates.github.io/issues"
+  },
+  "homepage": "https://infinates.com",
+  "dependencies": {
+    "bower": "^1.3.7"
+  }
+}
