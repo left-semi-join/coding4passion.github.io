@@ -1,0 +1,18 @@
+{
+  "name": "infinates",
+  "version": "0.0.0",
+  "description": "A blog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Infinates/infinates.github.io.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "TheCodeDestroyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Infinates/infinates.github.io/issues"
+  },
+  "homepage": "https://infinates.com"
+}
