@@ -1,0 +1,111 @@
+---
+layout: default
+---
+
+<div class="container">
+
+    {% include sidebarDefault.html %}
+
+    <div class="content">
+        <div class="widget info_widget">
+            {{#if @blog.logo}}
+            <a href="{{ site.host }}" class="logo"><img src="{{@blog.logo}}" alt="{{ site.title }}"></a>
+            {{/if}}
+            <p>{{ site.description }}</p>
+        </div>
+        <div class="inlinemenu">
+            <div class="graybar">
+                <div class="left"><i class="fa fa-bars"></i>Navigation</div>
+                <div class="right"><i class="fa fa-chevron-down"></i></div>
+            </div>
+            {% include navigation.html %}
+        </div>
+        <div class="postlist">
+
+            {% for post in paginator.posts %}
+
+            {% if page.postType == "feature" %}
+            <article class="post feature">
+                <a href="{{ post.url }}" class="largeimage postfeature">
+                    <div class="shadow"></div>
+                    <h1>{{{ post.title}}}</h1>
+                </a>
+                <div class="info">
+                    <div class="left">
+                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ post.author.gravatar }}" alt="author" class="minigravatar">{{ post.author.displayName }}</a>
+                    </div>
+                    <div class="right">
+                        <a href="{{ post.url }}" class="date"><i class="fa fa-clock-o"></i>{{ post.date  | "%B %d, %Y" }}</a>
+	                       <span class="tags"><i class="fa fa-tags"></i>
+                                {% for tag in page.tags %}
+	                                <a href="{{ tag.url }}">{{ tag.name }}</a>
+	                            {% endfor %}
+	                        </span>
+                    </div>
+                </div>
+                <div class="postcontents index">
+                    {{ content.excerpt }}
+                </div>
+                <div class="footer">
+                    <a href="{{ post.url }}" class="largesolid orange left">Read More</a>
+                </div>
+            </article>
+
+            {% elsif page.postType == "banner" %}
+            <article class="post banner">
+                <a class="basicfeature postfeature" href="{{ post.url }}"></a>
+                <h1><a href="{{ post.url }}">{{{ post.title }}}</a></h1>
+                <div class="info">
+                    <div class="left">
+                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ post.author.gravatar }}" alt="author" class="minigravatar">{{ post.author.displayName}}</a>
+                    </div>
+                    <div class="right">
+                        <a href="{{ post.url }}" class="date"><i class="fa fa-clock-o"></i>{{ post.date  | "%B %d, %Y" }}</a>
+	                       <span class="tags"><i class="fa fa-tags"></i>
+	                            {% for tag in page.tags %}
+	                                <a href="{{ post.url }}">{{ post.name }}</a>
+	                            {% endfor %}
+	                        </span>
+                    </div>
+                </div>
+                <div class="postcontents index">
+                    {{ content.excerpt }}
+                </div>
+                <div class="footer">
+                    <a href="{{ post.url }}" class="largesolid orange left">Read More</a>
+                </div>
+            </article>
+
+            {% elsif page.postType == "feature, banner" %}
+            <article class="post standard">
+                <h1><a href="{{ post.url }}">{{{ post.title }}}</a></h1>
+                <div class="info">
+                    <div class="left">
+                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ post.author.gravatar }}" alt="author" class="minigravatar">{{ post.author.displayName }}</a>
+                    </div>
+                    <div class="right">
+                        <a href="{{ post.url}}" class="date"><i class="fa fa-clock-o"></i>{{ post.date  | "%B %d, %Y" }}</a>
+	                       <span class="tags"><i class="fa fa-tags"></i>
+	                            {% for tag in page.tags %}
+	                                <a href="{{ post.url }}">{{ post.name }}</a>
+	                            {% endfor %}
+	                        </span>
+                    </div>
+                </div>
+                <div class="postcontents index">
+                    <p>{{ content.excerpt }}&hellip;</p>
+                </div>
+                <div class="footer">
+                    <a href="{{ post.url }}" class="largesolid orange left">Read More</a>
+                </div>
+            </article>
+            {% endif %}
+
+            {% endfor %}
+
+            {% include pagination.html %}
+
+        </div>
+    </div>
+
+</div>

@@ -8,18 +8,22 @@ url: "http://infinates.com"
 markdown: rdiscount
 permalink: pretty
 
+paginate: 11
+
 authors:
   tcd:
-    displayName: Matt Hackett
+    displayName: The Code Destroyer
+    bio: dsfdfds
     gravatar: ????
-    email: matt@lostdecadegames.com
+    email: the.code.destroyer@gmail.com
     web: https://thecodedestroyer.github.com/
     twitter: thcodedestroyer
     github: thecodedestroyer
   majcn:
     displayName: Gregor Majcen
+    bio: dsfdfds
     gravatar: ????
-    email: geoff@lostdecadegames.com
+    email: majcn@gmail.com
     web: https://majcn.github.com/
     twitter: majcn
     github: majcn

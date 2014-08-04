@@ -2,42 +2,65 @@
 layout: default
 ---
 
-{{#post}}
-
 {% assign author = site.authors[page.author] %}
 
-<div class="container {{post_class}}">
+<div class="featureheader">
+    <div class="background"></div>
+    <a href="{{ site.host }}" class="logo"><img src="{{ page.cover }}" alt="{{ site.title }}"></a>
+    <div class="wrapper">
+        <div class="title">
+            <h1><a href="#">{{{title}}}</a></h1>
+            <div class="info">
+                <div class="left">
+                    <a href="{{ author.web }}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
+                </div>
+                <div class="right">
+                    <a href="#" class="date"><i class="fa fa-clock-o"></i>{{date | "%B %d, %Y" }}</a>
+                   <span class="tags"><i class="fa fa-tags"></i>
+                        {% for tag in page.tags %}
+                            <a href="{{ tag.url }}" class="{{ tag.name }}">{{ tag.name }}</a>
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
 
     {% include sidebarPost.html %}
+
     <div class="content">
-        <div class="widget postinfo_widget inline {{post_class}}">
+        <div class="widget postinfo_widget inline">
             {{#if @blog.logo}}
             <a href="{{ site.host }}" class="logo"><img src="{{@blog.logo}}" alt="{{ site.name }}"></a>
             {{/if}}
         </div>
         <div class="postlist">
             <article class="post standard single">
-                <div class="header {{post_class}}">
+                <div class="header">
+                    {% if page.postType == "feature" %}
                     {{#has tag="featured"}}
-                    <a href="{{url}}" class="largeimage postfeature">
+                    <a href="{{ page.url }}" class="largeimage postfeature">
                         <div class="shadow"></div>
                         <h1>{{ page.title }}</h1>
                     </a>
                     {{/has}}
                     {{^has tag="featured"}}
-                    <a class="basicfeature postfeature" href="{{url}}"></a>
-                    <a href="{{url}}"><h1>{{{ page.title }}}</h1></a>
+                    <a class="basicfeature postfeature" href="{{ page.url }}"></a>
+                    <a href="{{ page.url }}"><h1>{{{ page.title }}}</h1></a>
                     {{/has}}
                     <div class="info">
                         <div class="left">
-                            <a href="{{url}}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
+                            <a href="{{ author.web }}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
                         </div>
                         <div class="right">
-                            <a href="{{url}}" class="date"><i class="fa fa-clock-o"></i>{{date format="MMMM Do, YYYY"}}</a>
+                            <a href="{{ page.url }}" class="date"><i class="fa fa-clock-o"></i>{{ page.date | "%B %d, %Y" }}</a>
                             <span class="tags"><i class="fa fa-tags"></i>
-                                {{#foreach tags}}
-                                    <a href="{{url}}" class="{{name}}">{{name}}</a>
-                                {{/foreach}}
+                                {% for tag in page.tags %}
+                                    <a href="{{ tag.url }}" class="{{ tag.name }}">{{ tag.name }}</a>
+                                {% endfor %}
                             </span>
                         </div>
                     </div>
@@ -47,25 +70,25 @@ layout: default
                 </div>
                 <div class="postfooter">
                     <div class="social">
-                        <a href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="largesolid twitter"><i class="fa fa-twitter"></i>Twitter</a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="largesolid facebook"><i class="fa fa-facebook"></i>Facebook</a>
-                        <a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="largesolid google"><i class="fa fa-google-plus"></i>Google+</a>
+                        <a href="http://twitter.com/share?text={{encode title}}&url={{ site.host }}{{ page.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="largesolid twitter"><i class="fa fa-twitter"></i>Twitter</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.host }}{{ page.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="largesolid facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                        <a href="https://plus.google.com/share?url={{ site.host }}{{ page.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="largesolid google"><i class="fa fa-google-plus"></i>Google+</a>
                     </div>
                     <div class="tags">
                         <ul class="tags_list">
-                            {{#foreach tags}}
-                            <li><a href="{{url}}" class="{{name}}">{{name}}</a></li>
-                            {{/foreach}}
+                            {% for tag in page.tags %}
+                            <li><a href="{{ tag.url }}" class="{{ tag.name }}">{{ tag.name }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="permalink">
-                        Permalink: <a href="{{@blog.url}}{{url}}">{{@blog.url}}{{url}}</a>
+                        Permalink: <a href="{{ site.host }}{{ page.url }}">{{ site.host }}{{url}}</a>
                     </div>
                 </div>
             </article>
             <div class="widget author_widget">
                 <a href="{{ author.web }}"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" class="gravatar" alt="{{ author.displayName }}"></a>
-                <h3><a href="{{ author.website }}">{{ author.displayName }}</a></h3>
+                <h3><a href="{{ author.web }}">{{ author.displayName }}</a></h3>
                 <a href="{{ author.web }}" class="author_url">{{ author.web }}</a>
                 <p>{{author.bio}}</p>
             </div>

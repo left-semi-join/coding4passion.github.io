@@ -2,14 +2,14 @@
 <div class="alternate">
     <aside>
         <!-- Description Widget -->
-        <div class="widget postinfo_widget {{post_class}}">
+        <div class="widget postinfo_widget">
             {{#if @blog.logo}}
             <a href="{{ site.host }}" class="logo"><img src="{{@blog.logo}}" alt="{{ site.name }}"></a>
             {{/if}}
         </div>
         <!-- Author Widget -->
         {% assign author = site.authors[page.author] %}
-        <div class="widget author_widget {{post_class}}">
+        <div class="widget author_widget">
             <a href="{{ author.web }}"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" class="gravatar" alt="{{ author.displayName }}"></a>
             <h3><a href="{{ author.web }}">{{ author.displayName }}</a></h3>
             <a href="{{ author.web }}" class="author_url">{{ author.web }}</a>
