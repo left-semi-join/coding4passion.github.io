@@ -6,7 +6,7 @@ layout: default
 
 <div class="featureheader">
     <div class="background"></div>
-    <a href="{{ site.host }}" class="logo"><img src="{{ page.cover }}" alt="{{ site.title }}"></a>
+    <a href="{{ site.host }}" class="logo"><img src="{{ page.cover }}" alt="{{ site.name }}"></a>
     <div class="wrapper">
         <div class="title">
             <h1><a href="#">{{title}}</a></h1>
@@ -33,22 +33,22 @@ layout: default
 
     <div class="content">
         <div class="widget postinfo_widget inline">
-    {% if site.logoPath == blank %}
+            {% if site.logoPath != blank %}
             <a href="{{ site.host }}" class="logo"><img src="{{ site.logoPath }}" alt="{{ site.name }}"></a>
             {% endif %}
         </div>
         <div class="postlist">
             <article class="post standard single">
                 <div class="header">
-                {% if page.postType == "featured" %}
-                        <a href="{{ page.url }}" class="largeimage postfeature">
-                            <div class="shadow"></div>
-                            <h1>{{ page.title }}</h1>
-                        </a>
+                    {% if page.postType == "featured" %}
+                    <a href="{{ page.url }}" class="largeimage postfeature">
+                        <div class="shadow"></div>
+                        <h1>{{ page.title }}</h1>
+                    </a>
                     {% endif %}
                     {% if page.postType == "featured" %}
-                        <a class="basicfeature postfeature" href="{{ page.url }}"></a>
-                        <a href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
+                    <a class="basicfeature postfeature" href="{{ page.url }}"></a>
+                    <a href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
                     {% endif %}
                     <div class="info">
                         <div class="left">
@@ -66,7 +66,7 @@ layout: default
                 </div>
                 <div class="postcontents">
                     {{ content }}
-                </div> 
+                </div>
                 <div class="postfooter">
                     <div class="social">
                         <!--TODO: Implement encoding-->
@@ -94,12 +94,12 @@ layout: default
             </div>
             {{! REMOVE THE TAGS BELOW FOR COMMENTS ON STATIC PAGES }}
             {{! <div class="comments">
-                <div class="graybar">
-                    <i class="fa fa-comments"></i>Comments
-                </div>
-                <div id="disqus_thread"></div>
-                <div id="g-comments"></div>
-            </div>}}
+            <div class="graybar">
+                <i class="fa fa-comments"></i>Comments
+            </div>
+            <div id="disqus_thread"></div>
+            <div id="g-comments"></div>
+        </div>}}
             <div class="inlinemenu">
                 <div class="graybar">
                     <div class="left"><i class="fa fa-bars"></i>Navigation</div>

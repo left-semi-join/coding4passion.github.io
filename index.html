@@ -1,4 +1,5 @@
 ---
+title: Infinates
 layout: default
 ---
 
@@ -8,8 +9,10 @@ layout: default
 
     <div class="content">
         <div class="widget info_widget">
-            {% if site.logoPath == blank %}
-                <a href="{{ site.host }}" class="logo"><img src="{{ site.logoPath }}" alt="{{ site.title }}"></a>
+            {% if site.logoPath != "" %}
+                <a href="{{ site.host }}" class="logo">
+                    <img src="{{ site.logoPath }}" alt="{{ site.name }}" />
+                </a>
             {% endif %}
             <p>{{ site.description }}</p>
         </div>
@@ -47,7 +50,7 @@ layout: default
                     </div>
                 </div>
                 <div class="postcontents index">
-                    {{ content.excerpt }}
+                    {{ post.excerpt }}
                 </div>
                 <div class="footer">
                     <a href="{{ post.url }}" class="largesolid orange left">Read More</a>
@@ -75,7 +78,7 @@ layout: default
                     </div>
                 </div>
                 <div class="postcontents index">
-                    {{ content.excerpt }}
+                    {{ post.excerpt }}
                 </div>
                 <div class="footer">
                     <a href="{{ post.url }}" class="largesolid orange left">Read More</a>
@@ -101,7 +104,7 @@ layout: default
                     </div>
                 </div>
                 <div class="postcontents index">
-                    <p>{{ content.excerpt }}&hellip;</p>
+                    <p>{{ post.excerpt }}&hellip;</p>
                 </div>
                 <div class="footer">
                     <a href="{{ post.url }}" class="largesolid orange left">Read More</a>

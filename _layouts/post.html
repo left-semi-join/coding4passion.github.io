@@ -6,7 +6,7 @@ layout: default
 
 <div class="featureheader">
     <div class="background"></div>
-    <a href="{{ site.host }}" class="logo"><img src="{{ page.cover }}" alt="{{ site.title }}"></a>
+    <a href="{{ site.host }}" class="logo"><img src="{{ page.cover }}" alt="{{ site.name }}"></a>
     <div class="wrapper">
         <div class="title">
             <h1><a href="#">{{title}}</a></h1>
@@ -33,7 +33,7 @@ layout: default
 
     <div class="content">
         <div class="widget postinfo_widget inline">
-            {% if site.logoPath == blank %}
+            {% if site.logoPath != blank %}
             <a href="{{ site.host }}" class="logo"><img src="{{ site.logoPath }}" alt="{{ site.name }}"></a>
             {% endif %}
         </div>

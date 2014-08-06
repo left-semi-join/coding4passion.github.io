@@ -2,9 +2,10 @@
     <aside>
         <!-- Description Widget -->
         <div class="widget info_widget">
-            site.logoPath
-            {% if site.logoPath == blank %}
-                <a href="{{ site.host }}" class="logo"><img src="{{ site.logo }}" alt="{{ site.title }}"></a>
+            {% if site.logoPath != blank %}
+                <a href="{{ site.host }}" class="logo">
+                    <img src="{{ site.logoPath }}" alt="{{ site.name }}">
+                </a>
             {% endif %}
             <p>{{ site.description}}</p>
         </div>
