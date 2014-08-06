@@ -4,6 +4,7 @@ name: "Infinates"
 description: "A blogging group"
 
 url: "http://infinates.com"
+logoPath: "/lib/logo_black.png"
 
 markdown: rdiscount
 permalink: pretty

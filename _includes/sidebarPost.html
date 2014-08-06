@@ -3,9 +3,9 @@
     <aside>
         <!-- Description Widget -->
         <div class="widget postinfo_widget">
-            {{#if @blog.logo}}
-            <a href="{{ site.host }}" class="logo"><img src="{{@blog.logo}}" alt="{{ site.name }}"></a>
-            {{/if}}
+            {% if site.logoPath == blank %}
+            <a href="{{ site.host }}" class="logo"><img src="{{ site.logoPath }}" alt="{{ site.name }}"></a>
+            {% endif %}
         </div>
         <!-- Author Widget -->
         {% assign author = site.authors[page.author] %}
@@ -13,7 +13,7 @@
             <a href="{{ author.web }}"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" class="gravatar" alt="{{ author.displayName }}"></a>
             <h3><a href="{{ author.web }}">{{ author.displayName }}</a></h3>
             <a href="{{ author.web }}" class="author_url">{{ author.web }}</a>
-            <p>{{author.bio}}</p>
+            <p>{{ author.bio }}</p>
         </div>
         <!-- Social Widget -->
         <div class="widget social_widget">
