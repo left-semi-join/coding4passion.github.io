@@ -3,20 +3,20 @@ exclude: [ "README.md", "Gemfile", "Gemfile.lock", ".idea", "bower_components", 
 name: "Infinates"
 description: "A blogging group"
 
-url: "http://infinates.com"
+url: "http://localhost:4000"
 
-logoPath: "lib/logo.png"
+logoPath: "/lib/logo.png"
 
 markdown: rdiscount
 permalink: pretty
 
-paginate: 11
+paginate: 5
 
 authors:
   tcd:
     displayName: The Code Destroyer
     bio: dsfdfds
-    gravatar: ????
+    gravatar: 8b2576c1371a08fb6167c09a33ae50e8
     email: the.code.destroyer@gmail.com
     web: https://thecodedestroyer.github.com/
     twitter: thcodedestroyer
