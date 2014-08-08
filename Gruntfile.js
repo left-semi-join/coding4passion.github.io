@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			combine: {
 				files: {
-					'lib/assets/css/theme.min.css': ['lib/src/sass/build/*.css']
+					'lib/assets/css/theme.min.css': ['lib/src/sass/build/*.css', 'lib/src/js/plugins/monokai_sublime.css']
 				}
 			}
 		},
