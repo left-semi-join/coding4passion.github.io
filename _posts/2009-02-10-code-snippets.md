@@ -8,7 +8,6 @@ postType: "featured, banner"
 author: tcd
 tags: [ JavaScript, Development, Software ]
 
-
 ---
 
 Whenever you need to post a code snippet, use the liquid tags `hilight` and `endhilight` like this:
