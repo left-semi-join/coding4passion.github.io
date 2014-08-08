@@ -1,6 +1,7 @@
 {
   "name": "infinates",
   "version": "0.0.0",
+  "private": true,
   "description": "A blog",
   "repository": {
     "type": "git",
@@ -14,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Infinates/infinates.github.io/issues"
   },
-  "homepage": "https://infinates.com"
+  "homepage": "https://infinates.com",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "^0.6.1"
+  }
 }

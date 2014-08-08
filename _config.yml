@@ -1,11 +1,11 @@
-exclude: [ "README.md", "Gemfile", "Gemfile.lock", ".idea", "bower_components", "node_modules" ]
+exclude: [ "README.md", "package.json", "Gruntfile.js", "lib/src", "CNAME", "Gemfile", "Gemfile.lock", ".idea", "node_modules" ]
 
 name: "Infinates"
 description: "A blogging group"
 
 url: "http://localhost:4000"
 
-logoPath: "/lib/logo.png"
+logoPath: "/lib/assets/logo.png"
 
 markdown: rdiscount
 permalink: pretty
