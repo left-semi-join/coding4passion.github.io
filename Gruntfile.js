@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			combine: {
 				files: {
-					'assets/css/theme.min.css': ['lib/src/sass/build/*.css']
+					'lib/assets/css/theme.min.css': ['lib/src/sass/build/*.css']
 				}
 			}
 		},
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 		uglify: {
 			js: {
 				files: {
-					'assets/js/theme.min.js': ['lib/src/js/lib/*.js', 'lib/src/js/plugins/*.js', 'lib/src/js/base.js']
+					'lib/src/js/build/theme.js': ['lib/src/js/lib/*.js', 'lib/src/js/plugins/*.js', 'lib/src/js/base.js']
 				}
 			}
 		},
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 				separator: ';'
 			},
 			dist: {
-				src: ['lib/src/js/config.js', 'lib/assets/js/theme.min.js'],
+				src: ['lib/src/js/config.js', 'lib/src/js/build/theme.js'],
 				dest: 'lib/assets/js/theme.min.js'
 			}
 		}
@@ -62,6 +62,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
 
-	grunt.registerTask('default', ['compass', 'cssmin', 'uglify', 'concat', 'watch']);
+	grunt.registerTask('default', ['compass', 'cssmin', 'uglify', 'concat']);
+	grunt.registerTask('dev', ['compass', 'cssmin', 'uglify', 'concat', 'watch']);
 
 };
