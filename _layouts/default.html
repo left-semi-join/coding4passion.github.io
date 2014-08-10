@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% include header.html %}
+    {% include head.html %}
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="navbar-brand" href="#">{{ site.name }}</a>
+        <nav class="mainnav {{#post}}{{/post}}">
+            <a id="top"></a>
+            <div class="navwrap">
+                {% include navigation.html %}
+                <div class="toggle"><a href="#"><i class="fa fa-bars"></i></a></div>
+            </div>
+        </nav>
+
+        {{ content }}
+        <a href="#top" class="backtotop"><i class="fa fa-chevron-up"></i></a>
+
+        <footer>
+            <div class="wrapper">
+                <div class="copyright">
+                    Copyright &copy; <a href="{{ site.host }}">{{ site.name }}</a>. {{ site.time | date: '%y' }} • All rights reserved.<br>
+                    <small>Proudly published with <a href="http://ghost.io">Ghost</a>.</small>
+                </div>
+                <div class="sociallinks">
+                    {% include socialFooter.html %}
                 </div>
             </div>
-        </div>
-        <div class="container">
-            {{ content }}
-        </div>
+        </footer>
 
-        <!--GOOGLE ANALYTICS-->
-        {% include ga.html %}
     </body>
 </html>

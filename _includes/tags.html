@@ -1,0 +1,9 @@
+<ul class="tags_list">
+    {% for tag in site.data.tags %}
+    <li>
+        <a href="{{ site.host }}/tag/{{ tag.url }}">
+            {{ tag.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

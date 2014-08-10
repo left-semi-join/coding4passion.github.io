@@ -1,0 +1,27 @@
+{{! USER CONFIGURATION OF THIS PAGE IS NOT REQUIRED }}
+<div class="alternate">
+    <aside>
+        <!-- Description Widget -->
+        <div class="widget postinfo_widget">
+            {% if site.logoPath != blank %}
+            <a href="{{ site.host }}" class="logo"><img src="{{ site.logoPath }}" alt="{{ site.name }}"></a>
+            {% endif %}
+        </div>
+        <!-- Author Widget -->
+        {% assign author = site.authors[page.author] %}
+        <div class="widget author_widget">
+            <a href="{{ author.web }}"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" class="gravatar" alt="{{ author.displayName }}"></a>
+            <h3><a href="{{ author.web }}">{{ author.displayName }}</a></h3>
+            <a href="{{ author.web }}" class="author_url">{{ author.web }}</a>
+            <p>{{ author.bio }}</p>
+        </div>
+        <!-- Social Widget -->
+        <div class="widget social_widget">
+            {% include socialSidebar.html %}
+        </div>
+        <!-- Tag Widget -->
+        <div class="widget tag_widget">
+            {% include tags.html %}
+        </div>
+    </aside>
+</div>
