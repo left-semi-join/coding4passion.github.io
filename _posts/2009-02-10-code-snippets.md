@@ -10,7 +10,7 @@ tags: [ JavaScript, Development, Software ]
 
 ---
 
-Whenever you need to post a code snippet, use the liquid tags `hilight` and `endhilight` like this:
+Whenever you need to post a code snippet, use the liquid tags `highlight` and `endhighlight` like this:
 
 ````ruby
 # some code goes here

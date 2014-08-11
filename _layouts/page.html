@@ -46,7 +46,7 @@ layout: default
                         <h1>{{ page.title }}</h1>
                     </a>
                     {% endif %}
-                    {% if page.postType == "featured" %}
+                    {% if page.postType contains "featured" %}
                     <a class="basicfeature postfeature" href="{{ page.url }}"></a>
                     <a href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
                     {% endif %}

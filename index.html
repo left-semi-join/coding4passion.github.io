@@ -87,7 +87,7 @@ layout: default
                 </div>
             </article>
 
-            {% elsif post.postType == "featured, banner" %}
+            {% elsif post.postType contains "featured, banner" %}
             <article class="post standard">
                 <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
                 <div class="info">
