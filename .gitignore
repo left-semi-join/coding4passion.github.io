@@ -39,3 +39,4 @@ _site/*
 node_modules/*
 lib/src/sass/build/*
 lib/src/js/build/*
+.sass-cache/
