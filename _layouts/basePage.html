@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="container">
+
+    {% include sidebarDefault.html %}
+
+    <div class="content">
+        <div class="widget info_widget">
+            {% if site.logoPath != blank %}
+                <a href="{{ site.url }}" class="logo">
+                    <img src="{{ site.logoPath }}" alt="{{ site.name }}" />
+                </a>
+            {% endif %}
+            <p>{{ site.description }}</p>
+        </div>
+        <div class="inlinemenu">
+            <div class="graybar">
+                <div class="left"><i class="fa fa-bars"></i>Navigation</div>
+                <div class="right"><i class="fa fa-chevron-down"></i></div>
+            </div>
+            {% include navigation.html %}
+        </div>
+        <div class="postlist">
+            <div class="header">
+                {% if page.postType == "featured" %}
+                <a href="{{ page.url }}" class="largeimage postfeature">
+                    <div class="shadow"></div>
+                    <h1>{{ page.title }}</h1>
+                </a>
+                {% endif %}
+                {% if page.postType contains "featured" %}
+                <a class="basicfeature postfeature" href="{{ page.url }}"></a>
+                <a href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
+                {% endif %}
+            </div>
+            <div class="postcontents">
+                {{ content }}
+            </div>
+            <div class="postfooter">
+                <div class="permalink">
+                    Permalink: <a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

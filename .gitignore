@@ -37,4 +37,6 @@ _site/*
 
 # Other
 node_modules/*
-bower_components/*
+lib/src/sass/build/*
+lib/src/js/build/*
+.sass-cache/

@@ -6,7 +6,7 @@ layout: default
 
 <div class="featureheader">
     <div class="background"></div>
-    <a href="{{ site.host }}" class="logo"><img src="{{ page.cover }}" alt="{{ site.name }}"></a>
+    <a href="{{ site.url }}" class="logo"><img src="{{ page.cover }}" alt="{{ site.name }}"></a>
     <div class="wrapper">
         <div class="title">
             <h1><a href="#">{{title}}</a></h1>
@@ -15,7 +15,7 @@ layout: default
                     <a href="{{ author.web }}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
                 </div>
                 <div class="right">
-                    <a href="#" class="date"><i class="fa fa-clock-o"></i>{{date | "%B %d, %Y" }}</a>
+                    <a href="#" class="date"><i class="fa fa-clock-o"></i>{{date | date: "%B %d, %Y" }}</a>
                    <span class="tags"><i class="fa fa-tags"></i>
                         {% for tag in page.tags %}
                             <a href="{{ tag.url }}" class="{{ tag.name }}">{{ tag.name }}</a>
@@ -34,7 +34,7 @@ layout: default
     <div class="content">
         <div class="widget postinfo_widget inline">
             {% if site.logoPath != blank %}
-            <a href="{{ site.host }}" class="logo"><img src="{{ site.logoPath }}" alt="{{ site.name }}"></a>
+            <a href="{{ site.url }}" class="logo"><img src="{{ site.logoPath }}" alt="{{ site.name }}"></a>
             {% endif %}
         </div>
         <div class="postlist">
@@ -46,7 +46,7 @@ layout: default
                         <h1>{{ page.title }}</h1>
                     </a>
                     {% endif %}
-                    {% if page.postType == "featured" %}
+                    {% if page.postType contains "featured" %}
                     <a class="basicfeature postfeature" href="{{ page.url }}"></a>
                     <a href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
                     {% endif %}
@@ -55,11 +55,13 @@ layout: default
                             <a href="{{ author.web }}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
                         </div>
                         <div class="right">
-                            <a href="{{ page.url }}" class="date"><i class="fa fa-clock-o"></i>{{ page.date | "%B %d, %Y" }}</a>
+                            <a href="{{ page.url }}" class="date"><i class="fa fa-clock-o"></i>{{ page.date | date: "%B %d, %Y" }}</a>
                             <span class="tags"><i class="fa fa-tags"></i>
-                                {% for tag in page.tags %}
+                                {% for tag in site.data.tags %}
+                                {% if page.tags contains tag.name %}
                                     <a href="{{ tag.url }}" class="{{ tag.name }}">{{ tag.name }}</a>
-                                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                             </span>
                         </div>
                     </div>
@@ -70,19 +72,21 @@ layout: default
                 <div class="postfooter">
                     <div class="social">
                         <!--TODO: Implement encoding-->
-                        <a href="http://twitter.com/share?text={{encode title}}&url={{ site.host }}{{ page.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="largesolid twitter"><i class="fa fa-twitter"></i>Twitter</a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.host }}{{ page.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="largesolid facebook"><i class="fa fa-facebook"></i>Facebook</a>
-                        <a href="https://plus.google.com/share?url={{ site.host }}{{ page.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="largesolid google"><i class="fa fa-google-plus"></i>Google+</a>
+                        <a href="http://twitter.com/share?text={{encode title}}&url={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="largesolid twitter"><i class="fa fa-twitter"></i>Twitter</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="largesolid facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                        <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="largesolid google"><i class="fa fa-google-plus"></i>Google+</a>
                     </div>
                     <div class="tags">
                         <ul class="tags_list">
-                            {% for tag in page.tags %}
+                            {% for tag in site.data.tags %}
+                            {% if page.tags contains tag.name %}
                             <li><a href="{{ tag.url }}" class="{{ tag.name }}">{{ tag.name }}</a></li>
+                            {% endif %}
                             {% endfor %}
                         </ul>
                     </div>
                     <div class="permalink">
-                        Permalink: <a href="{{ site.host }}{{ page.url }}">{{ site.host }}{{ page.url }}</a>
+                        Permalink: <a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>
                     </div>
                 </div>
             </article>
@@ -92,14 +96,14 @@ layout: default
                 <a href="{{ author.web }}" class="author_url">{{ author.web }}</a>
                 <p>{{author.bio}}</p>
             </div>
-            {{! REMOVE THE TAGS BELOW FOR COMMENTS ON STATIC PAGES }}
-            {{! <div class="comments">
-            <div class="graybar">
-                <i class="fa fa-comments"></i>Comments
-            </div>
-            <div id="disqus_thread"></div>
-            <div id="g-comments"></div>
-        </div>}}
+            <!--REMOVE THE TAGS BELOW FOR COMMENTS ON STATIC PAGES-->
+            <!--<div class="comments">-->
+            <!--<div class="graybar">-->
+            <!--<i class="fa fa-comments"></i>Comments-->
+            <!--</div>-->
+            <!--<div id="disqus_thread"></div>-->
+            <!--<div id="g-comments"></div>-->
+            <!--</div>-->
             <div class="inlinemenu">
                 <div class="graybar">
                     <div class="left"><i class="fa fa-bars"></i>Navigation</div>

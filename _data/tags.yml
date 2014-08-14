@@ -10,8 +10,10 @@
   url: server
 - name: Software
   url: software
-- name: HTML CSS
-  url: html%20css
+- name: HTML
+  url: html
+- name: CSS
+  url: css
 - name: Lifecycle
   url: lifecycle
 - name: Project
