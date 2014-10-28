@@ -1,11 +1,11 @@
 {
-  "name": "infinates",
+  "name": "c4p",
   "version": "0.0.0",
   "private": true,
   "description": "A blog",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Infinates/infinates.github.io.git"
+    "url": "https://github.com/Coding4Passion/coding4passion.github.io.git"
   },
   "keywords": [
     "blog"
@@ -13,9 +13,9 @@
   "author": "TheCodeDestroyer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Infinates/infinates.github.io/issues"
+    "url": "https://github.com/Coding4Passion/coding4passion.github.io/issues"
   },
-  "homepage": "https://infinates.com",
+  "homepage": "https://github.com/Coding4Passion/coding4passion.github.io",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-compass": "~0.7.0",
