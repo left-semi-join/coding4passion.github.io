@@ -1,9 +1,9 @@
 exclude: [ "README.md", "package.json", "Gruntfile.js", "lib/src", "CNAME", "Gemfile", "Gemfile.lock", ".idea", "node_modules" ]
 
-name: "C4P"
+name: "Coding 4 Passion"
 description: "A blogging group"
 
-url: "http://localhost:4000"
+url: "http://coding4passion.org"
 
 logoPath: "/lib/assets/logo.png"
 
@@ -18,7 +18,7 @@ authors:
     bio: dsfdfds
     gravatar: 8b2576c1371a08fb6167c09a33ae50e8
     email: the.code.destroyer@gmail.com
-    web: https://thecodedestroyer.github.com/
+    web: https://thecodedestroyer.github.com
     twitter: thcodedestroyer
     github: thecodedestroyer
   majcn:
@@ -26,6 +26,6 @@ authors:
     bio: dsfdfds
     gravatar: c9376838a0f0962e333c4bd5ed289163
     email: majcn.m@gmail.com
-    web: https://majcn.github.com/
+    web: https://majcn.github.com
     twitter: majcnM
     github: majcn
