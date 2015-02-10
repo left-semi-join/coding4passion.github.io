@@ -15,10 +15,10 @@ paginate: 5
 authors:
   tcd:
     displayName: Nace Logar
-    bio: dsfdfds
+    bio: "My name is Nace, pronounced 'Natse' I started as a windows desktop developer.Later on I became web developer working primarily on web pages and business web applications where I actually fell in love with CSS, HTML and JS."
     gravatar: 8b2576c1371a08fb6167c09a33ae50e8
     email: the.code.destroyer@gmail.com
-    web: https://thecodedestroyer.github.com
+    web: https://thecodedestroyer.github.io
     twitter: thcodedestroyer
     github: thecodedestroyer
   majcn:
