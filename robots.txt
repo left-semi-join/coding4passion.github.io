@@ -1,4 +1,4 @@
 # Allow crawling of all content
 User-agent: *
 Disallow:
-Sitemap: https://coding4passion.org/sitemap.xml
+Sitemap: http://coding4passion.org/sitemap.xml

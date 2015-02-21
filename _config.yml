@@ -3,7 +3,7 @@ exclude: [ "README.md", "package.json", "Gruntfile.js", "lib/src", "CNAME", "Gem
 name: "Coding 4 Passion"
 description: "A blogging group"
 
-url: "https://coding4passion.org"
+url: "http://coding4passion.org"
 
 logoPath: "/lib/assets/logo.png"
 
