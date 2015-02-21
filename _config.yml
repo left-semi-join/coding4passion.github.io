@@ -3,8 +3,7 @@ exclude: [ "README.md", "package.json", "Gruntfile.js", "lib/src", "CNAME", "Gem
 name: "Coding 4 Passion"
 description: "A blogging group"
 
-#url: "http://coding4passion.org"
-url: "http://localhost:4000/"
+url: "https://coding4passion.org"
 
 logoPath: "/lib/assets/logo.png"
 
@@ -12,6 +11,9 @@ markdown: rdiscount
 permalink: pretty
 
 paginate: 5
+
+gems:
+  - jekyll-sitemap
 
 authors:
   tcd:
