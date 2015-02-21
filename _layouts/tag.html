@@ -6,9 +6,12 @@ layout: default
 
     {% include sidebarDefault.html %}
 
+    {% assign tagData = (site.data.tags | where: "id", page.tag) %}
+    {% assign currentTag = tagData | first %}
+
     <div class="content">
         <div class="notification">
-            <div class="left"><i class="fa fa-tags"></i>TAG: <span>{{tag.name}}</span></div>
+            <div class="left"><i class="fa fa-tags"></i>TAG: <span>{{ currentTag.name }}</span></div>
             <div class="right"><a href="{{ site.url }}"><i class="fa fa-times"></i></a></div>
         </div>
         <div class="widget info_widget">
@@ -28,13 +31,14 @@ layout: default
         </div>
         <div class="postlist">
 
-            {% for post in paginator.posts %}
+            {% for post in site.posts %}
 
-            <!--TODO: Find a way to set currentTag, maybe from URL?-->
-            {% if post.tags contains currentTag %}
+            {% if post.tags contains currentTag.id %}
+
+            {% assign author = site.authors[post.author] %}
 
             <!--TODO: Not sure if this if stacking is proper, yet...-->
-            {% if page.postType == "featured" %}
+            {% if post.postType == "featured" %}
             <article class="post feature">
                 <a href="{{ post.url }}" class="largeimage postfeature">
                     <div class="shadow"></div>
@@ -42,13 +46,13 @@ layout: default
                 </a>
                 <div class="info">
                     <div class="left">
-                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ post.author.gravatar }}" alt="author" class="minigravatar">{{ post.author.displayName }}</a>
+                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
                     </div>
                     <div class="right">
                         <a href="{{ post.url }}" class="date"><i class="fa fa-clock-o"></i>{{ post.date | date: "%B %d, %Y" }}</a>
                            <span class="tags"><i class="fa fa-tags"></i>
                                 {% for tag in site.data.tags %}
-                                   {% if page.tags contains tag.name %}
+                                   {% if post.tags contains tag.name %}
                                         <a href="{{ tag.url }}">{{ tag.name }}</a>
                                    {% endif %}
                                 {% endfor %}
@@ -63,20 +67,20 @@ layout: default
                 </div>
             </article>
 
-            {% elsif page.postType == "banner" %}
+            {% elsif post.postType == "banner" %}
 
             <article class="post banner">
                 <a class="basicfeature postfeature" href="{{ post.url }}"></a>
                 <h1><a href="{{ post.url }}">{{title}}</a></h1>
                 <div class="info">
                     <div class="left">
-                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ post.author.gravatar }}" alt="author" class="minigravatar">{{ post.author.displayName }}</a>
+                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
                     </div>
                     <div class="right">
                         <a href="{{ post.url }}" class="date"><i class="fa fa-clock-o"></i>{{ post.date  | date: "%B %d, %Y" }}</a>
                            <span class="tags"><i class="fa fa-tags"></i>
                                {% for tag in site.data.tags %}
-                                   {% if page.tags contains tag.name %}
+                                   {% if post.tags contains tag.name %}
                                         <a href="{{ tag.url }}">{{ tag.name }}</a>
                                    {% endif %}
                                 {% endfor %}
@@ -91,19 +95,19 @@ layout: default
                 </div>
             </article>
 
-            {% elsif page.postType contains "featured, banner" %}
+            {% elsif post.postType contains "featured, banner" %}
 
             <article class="post standard">
                 <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
                 <div class="info">
                     <div class="left">
-                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ post.author.gravatar }}" alt="author" class="minigravatar">{{ post.author.displayName }}</a>
+                        <a href="{{ post.url }}" class="author"><img src="http://www.gravatar.com/avatar/{{ author.gravatar }}" alt="author" class="minigravatar">{{ author.displayName }}</a>
                     </div>
                     <div class="right">
                         <a href="{{ post.url }}" class="date"><i class="fa fa-clock-o"></i>{{ post.date  | date: "%B %d, %Y" }}</a>
                            <span class="tags"><i class="fa fa-tags"></i>
                                {% for tag in site.data.tags %}
-                                   {% if page.tags contains tag.name %}
+                                   {% if post.tags contains tag.name %}
                                         <a href="{{ tag.url }}">{{ tag.name }}</a>
                                    {% endif %}
                                 {% endfor %}
@@ -127,5 +131,4 @@ layout: default
 
         </div>
     </div>
-
 </div>

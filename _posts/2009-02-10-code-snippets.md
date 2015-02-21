@@ -6,7 +6,7 @@ excerpt: Quick overview on how to post code snippets using Liquid tags and how t
 
 postType: "featured, banner"
 author: tcd
-tags: [ JavaScript, Development, Software ]
+tags: dev
 
 ---
 
