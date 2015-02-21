@@ -2,10 +2,15 @@ exclude: [ "README.md", "package.json", "Gruntfile.js", "lib/src", "CNAME", "Gem
 
 name: "Coding 4 Passion"
 description: "A blogging group"
-
 url: "http://coding4passion.org"
-
 logoPath: "/lib/assets/logo.png"
+
+# Social
+facebook: "https://www.facebook.com/coding4passion"
+google: "https://plus.google.com/+Coding4passionOrg"
+twitter: "https://twitter.com/coding4passion"
+github: "https://github.com/Coding4Passion"
+feed: "http://feeds.feedburner.com/Coding4Passion"
 
 markdown: rdiscount
 permalink: pretty
