@@ -1,30 +1,30 @@
-- id: "front-dev"
+- id: front-dev
   name: Frontend Development
   url: frontend-development
-- id: "front"
+- id: front
   name: Frontend
   url: frontend
-- id: "dev"
+- id: dev
   name: Development
   url: development
-- id: "js"
+- id: js
   name: JavaScript
   url: javascript
-- id: "serv"
+- id: serv
   name: Server
   url: server
-- id: "soft"
+- id: soft
   name: Software
   url: software
-- id: "html"
+- id: html
   name: HTML
   url: html
-- id: "css"
+- id: css
   name: CSS
   url: css
-- id: "proj"
+- id: proj
   name: Project
   url: project
-- id: "lifecycle"
+- id: lifecycle
   name: Lifecycle
   url: lifecycle
