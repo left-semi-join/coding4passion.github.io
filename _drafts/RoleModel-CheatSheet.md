@@ -165,6 +165,20 @@ https://github.com/isagalaev/highlight.js/tree/master/src/languages
 
 
 
+LIQUID
+
+For Jekyll use of variables like page url you can use liquid syntax.
+
+Some examples:
+
+[site url]({{ site.url }})
+
+[archive]({{ site.url }}/archive)
+
+[permalink]({{ page.url }})
+
+
+
 HTML
 
 
