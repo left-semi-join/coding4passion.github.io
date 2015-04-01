@@ -20,6 +20,15 @@ paginate: 5
 gems:
   - jekyll-sitemap
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      postType: "featured, banner"
+
 authors:
   tcd:
     displayName: Nace Logar
